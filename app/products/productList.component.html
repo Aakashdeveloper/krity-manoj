@@ -14,5 +14,31 @@
                 <h3>Filtered By:</h3>
             </div>
         </div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        <button class="btn btn-success">
+                            Show Image
+                        </button>
+                    </th>
+                    <th>Product</th>
+                    <th>Code</th>
+                    <th>Available</th>
+                    <th>Price</th>
+                    <th>StarRating</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let product of products">
+                    <td><img [src]="product.imageUrl" /></td>
+                    <td>{{product.productName}}</td>
+                    <td>{{product.productCode}}</td>
+                    <td>{{product.releaseDate}}</td>
+                    <td>{{product.price}}</td>
+                    <td>{{product.starRating}}</td>
+                </tr>
+            </tbody>
+        </table>
     </div>
 </div>
