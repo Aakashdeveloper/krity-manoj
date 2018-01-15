@@ -1,4 +1,5 @@
 import {Component} from '@angular/core';
+import {IProduct} from './product'
 
 @Component({
     selector:'pm-product',
@@ -7,7 +8,9 @@ import {Component} from '@angular/core';
 
 export class ProductListComponent{
     title:string="***PRODUCT LIST***";
-    products:any[] =[
+    showImage:boolean=false;
+    filterProduct:string="Apple"
+    products:IProduct[] =[
         {
             "productId": 1,
             "productName": "Leaf Rake",
@@ -29,6 +32,10 @@ export class ProductListComponent{
             "imageUrl": "http://openclipart.org/image/300px/svg_to_png/58471/garden_cart.png"
         }
     ]
+
+    KrityManoj(): void{
+        this.showImage = !this.showImage
+    }
 
 }
 

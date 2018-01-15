@@ -10,6 +10,8 @@ var core_1 = require("@angular/core");
 var ProductListComponent = /** @class */ (function () {
     function ProductListComponent() {
         this.title = "***PRODUCT LIST***";
+        this.showImage = false;
+        this.filterProduct = "Apple";
         this.products = [
             {
                 "productId": 1,
@@ -33,6 +35,9 @@ var ProductListComponent = /** @class */ (function () {
             }
         ];
     }
+    ProductListComponent.prototype.KrityManoj = function () {
+        this.showImage = !this.showImage;
+    };
     ProductListComponent = __decorate([
         core_1.Component({
             selector: 'pm-product',
