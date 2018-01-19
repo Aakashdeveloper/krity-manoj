@@ -12,6 +12,8 @@ var forms_1 = require("@angular/forms");
 var app_component_1 = require("./app.component");
 var car_component_1 = require("./car.component");
 var productList_component_1 = require("./products/productList.component");
+var star_component_1 = require("./shared/star.component");
+var product_service_1 = require("./products/product.service");
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
@@ -24,7 +26,11 @@ var AppModule = /** @class */ (function () {
             declarations: [
                 app_component_1.AppComponent,
                 car_component_1.CarComponent,
-                productList_component_1.ProductListComponent
+                productList_component_1.ProductListComponent,
+                star_component_1.StarComponent
+            ],
+            providers: [
+                product_service_1.ProductService
             ],
             bootstrap: [
                 app_component_1.AppComponent

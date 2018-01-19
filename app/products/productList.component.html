@@ -32,12 +32,14 @@
             </thead>
             <tbody>
                 <tr *ngFor="let product of products">
-                    <td><img [src]="product.imageUrl" *ngIf="showImage"/></td>
+                    <td><img [src]="product.imageUrl" *ngIf="showImage"
+                        [style.width.px]="imageWidth"/></td>
                     <td>{{product.productName|uppercase}}</td>
                     <td>{{product.productCode|lowercase}}</td>
                     <td>{{product.releaseDate}}</td>
                     <td>{{product.price|currency:'GBP':true}}</td>
-                    <td>{{product.starRating}}</td>
+                    <td><sai-star [rating]="product.starRating"
+                        (ratingClciked)="onRatingClicked($event)"></sai-star></td>
                 </tr>
             </tbody>
         </table>

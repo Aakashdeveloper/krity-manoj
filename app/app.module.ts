@@ -5,6 +5,8 @@ import {FormsModule} from '@angular/forms';
 import {AppComponent} from './app.component'
 import {CarComponent} from './car.component'
 import { ProductListComponent } from './products/productList.component';
+import { StarComponent } from './shared/star.component';
+import { ProductService } from './products/product.service';
 
 
 @NgModule({
@@ -15,7 +17,11 @@ import { ProductListComponent } from './products/productList.component';
     declarations:[
         AppComponent,
         CarComponent,
-        ProductListComponent
+        ProductListComponent,
+        StarComponent
+    ],
+    providers:[
+        ProductService
     ],
     bootstrap:[
         AppComponent
