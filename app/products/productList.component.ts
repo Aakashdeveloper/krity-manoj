@@ -20,7 +20,7 @@ export class ProductListComponent implements OnInit{
         this.showImage = !this.showImage
     }
     
-    constructor(){}
+    constructor(private _productService:ProductService){}
 
     onRatingClicked(message:string):void{
         this.title= "Product List   "+ message
@@ -28,6 +28,7 @@ export class ProductListComponent implements OnInit{
 
     ngOnInit(): void{
         console.log("hi>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>")
+        this.products = this._productService.getProducts()
     }
 
 
