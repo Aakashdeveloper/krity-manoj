@@ -11,6 +11,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var http_1 = require("@angular/http");
+var Observable_1 = require("rxjs/Observable");
 require("rxjs/add/operator/map");
 require("rxjs/add/operator/catch");
 var ProductService = /** @class */ (function () {
@@ -19,7 +20,12 @@ var ProductService = /** @class */ (function () {
         this._productUrl = "https://ngapi4.herokuapp.com/api/getProducts";
     }
     ProductService.prototype.getProducts = function () {
-        return this._http.get(this._productUrl);
+        return this._http.get(this._productUrl)
+            .map(function (response) { return response.json(); })
+            .catch(this.handleError);
+    };
+    ProductService.prototype.handleError = function (error) {
+        return Observable_1.Observable.throw(error.json().error);
     };
     ProductService = __decorate([
         core_1.Injectable(),
@@ -28,4 +34,11 @@ var ProductService = /** @class */ (function () {
     return ProductService;
 }());
 exports.ProductService = ProductService;
+/*
+function add(a){
+    return a+a
+}
+
+var add = (a) => return a+a
+*/ 
 //# sourceMappingURL=product.service.js.map

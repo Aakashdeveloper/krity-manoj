@@ -26,8 +26,10 @@ var ProductListComponent = /** @class */ (function () {
         this.title = "Product List   " + message;
     };
     ProductListComponent.prototype.ngOnInit = function () {
+        var _this = this;
         console.log("hi>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
-        this.products = this._productService.getProducts();
+        this._productService.getProducts()
+            .subscribe(function (products) { return _this.products = products; }, function (error) { return _this.errorMessage = error; });
     };
     ProductListComponent = __decorate([
         core_1.Component({

@@ -15,6 +15,7 @@ export class ProductListComponent implements OnInit{
     filterProduct:string="Apple";
     imageWidth:number=50;
     products:IProduct[];
+    errorMessage:string;
 
     KrityManoj(): void{
         this.showImage = !this.showImage
@@ -28,7 +29,9 @@ export class ProductListComponent implements OnInit{
 
     ngOnInit(): void{
         console.log("hi>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>")
-        this.products = this._productService.getProducts()
+        this._productService.getProducts()
+            .subscribe(products => this.products=products,
+            error=>this.errorMessage=<any>error)
     }
 
 

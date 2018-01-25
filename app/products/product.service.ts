@@ -13,9 +13,24 @@ export class ProductService{
 
     constructor(private _http:Http){}
 
-    getProducts():IProduct[]{
+    getProducts():Observable<IProduct[]>{
         return this._http.get(this._productUrl)
-                
+            .map((response:Response)=> <IProduct[]>response.json())
+            .catch(this.handleError)
+
+    }
+
+    private handleError(error:Response){
+        return Observable.throw(error.json().error)
     }
 
 }
+
+
+/*
+function add(a){
+    return a+a
+}
+
+var add = (a) => return a+a
+*/

@@ -4,9 +4,22 @@ import {Component} from '@angular/core'
     selector:'product-app',
     template:`
     <div>
-        <h1>This is my main file</h1>
-        <krity-car></krity-car>
-        <pm-product></pm-product>
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand">WebSiteName</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li ><a [routerLink]="['/home']">Home</a></li>
+                <li><a [routerLink]="['/products']">Product</a></li>
+                <li><a [routerLink]="['/orders']">Orders</a></li>
+        
+            </ul>
+            </div>
+        </nav>
+        <div class="container">
+            <router-outlet></router-outlet>
+        </div>
     </div>`
 })
 
