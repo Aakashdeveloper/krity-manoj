@@ -12,7 +12,7 @@ import {ProductService} from './product.service'
 export class ProductListComponent implements OnInit{
     title:string="***PRODUCT LIST***";
     showImage:boolean=false;
-    filterProduct:string="Apple";
+    filterProduct:string;
     imageWidth:number=50;
     products:IProduct[];
     errorMessage:string;

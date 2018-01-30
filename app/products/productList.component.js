@@ -16,7 +16,6 @@ var ProductListComponent = /** @class */ (function () {
         this._productService = _productService;
         this.title = "***PRODUCT LIST***";
         this.showImage = false;
-        this.filterProduct = "Apple";
         this.imageWidth = 50;
     }
     ProductListComponent.prototype.KrityManoj = function () {
